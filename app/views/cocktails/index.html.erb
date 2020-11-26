@@ -1,0 +1,8 @@
+<h1>Today's Specials</h1>
+<br>
+<%@cocktails.each do |drink|%>
+<h4><i><%=link_to drink.name, cocktail_path(drink.id)%></i></h4>
+<% end %>
+
+<br><br>
+<p><%= link_to "Add new cocktail", new_cocktail_path %></p>
