@@ -1,12 +1,21 @@
-<h2><%=@cocktail.name%></h2>
+ <div class = "container"> 
+  <div class = "card-trip">
+
+    <div class = card-trip-infos>
+      <h2><%=@cocktail.name%>
+      </h2>
+    </div> 
+  </div> 
+  <p class = "card-sub-info"><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail.id)%> | <%= link_to "Delete this cocktail", cocktail_path(@cocktail.id), method: :delete %></p>
+  <p class = "card-sub-info"></p>
+ </div> 
+ <h3> Doses: <h3>
 <%@cocktail.doses.each do |dosage| %>
-  <div class = "card-body">
+  <div class = "card-category doses">
   <h4><%=Ingredient.find(dosage.ingredient_id).name%></h4>
   <p><%=dosage.description%></p>
-  <p><%= link_to "Delete this dose", dose_path(dosage.id), method: :delete %></p>
+  <p class = "card-delete-dose"><%= link_to "Delete", dose_path(dosage.id), method: :delete %></p>
   </div>
   <br>
  
 <% end %>
-<p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail.id)%></p>
-<p><%= link_to "Delete this cocktail", cocktail_path(@cocktail.id), method: :delete %></p>
