@@ -1,8 +1,18 @@
-<h1>Today's Specials</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/originals/98/2b/d0/982bd0c3315037720a6ec2634c15781d.jpg);">
+  <div class="container">
+    <h1>Today's Specials!</h1>
+    <p>Embrace the Madness</p>
+  </div>
+</div>
 <br>
-<%@cocktails.each do |drink|%>
-<h4><i><%=link_to drink.name, cocktail_path(drink.id)%></i></h4>
-<% end %>
+<div class ="cards index">
+  <%@cocktails.each do |drink|%>
+    <div class ="card-category">
+      <h4><i><%=link_to drink.name, cocktail_path(drink.id)%></i></h4>
+      <%= image_tag "logo.png", alt: "Le Wagon", width: 200 %>
+    </div>
+  <% end %>
+</div>
 
 <br><br>
 <p><%= link_to "Add new cocktail", new_cocktail_path %></p>

@@ -12,9 +12,11 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    Cocktail.create!(create_by_params)
-    redirect_to "/cocktails"
-
+    if Cocktail.create!(create_by_params)
+      redirect_to cocktail_path(Cocktail.last)
+    else
+      render :new
+    end
   end
 
   def edit
