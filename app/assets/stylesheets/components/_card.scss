@@ -5,10 +5,11 @@
 }
 
 .card-category {
+  display: flex;
+  justify-content: space-between;
   background-size: cover;
   background-position: center;
   height: 100px;
-  justify-content: center;
   align-items: center;
   color: darkgrey;
   font-size: 24px;
@@ -16,9 +17,11 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding-left: 3%;
+  padding-right: 10px
 }
-
+.card-category-image {
+  padding: 5px;
+}
 .card-new {
   background-size: cover;
   background-position: center;
@@ -38,8 +41,9 @@
 }
 
 .card-trip {
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
-  background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
 }
@@ -79,11 +83,19 @@
   font-size: 15px;
 }
 
-.card-category .doses{
-  display: inline;
+.doses{
+  flex-direction: column;
+  justify-content: left;
+  width: 40%;
+  margin: auto;
 }
 
 .card-category h4 {
   font-size: 30px;
   color: black;
+}
+
+.card-sub-info {
+text-align: center;
+justify-content: center;
 }

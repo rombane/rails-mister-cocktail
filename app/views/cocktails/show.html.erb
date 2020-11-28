@@ -1,6 +1,7 @@
+ <%image_code = @cocktail.photo.key %> 
  <div class = "container"> 
-  <div class = "card-trip">
-
+  <div class = "card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/rombane/image/upload/<%=image_code%>);">
+    <div class = "card-category-image"><%= cl_image_tag @cocktail.photo.key , height: 50, width: 50, crop: :fill%></div>
     <div class = card-trip-infos>
       <h2><%=@cocktail.name%>
       </h2>
@@ -18,4 +19,7 @@
   </div>
   <br>
  
+
 <% end %>
+<br>
+<p><%= link_to "Home", cocktails_path %></p>

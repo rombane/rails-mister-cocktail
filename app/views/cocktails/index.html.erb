@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/originals/98/2b/d0/982bd0c3315037720a6ec2634c15781d.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/rombane/image/upload/v1606458353/vb2e1frlu7motk2z6wc6.jpg);">
   <div class="container">
     <h1>Today's Specials!</h1>
     <p>Embrace the Madness</p>
@@ -6,10 +6,10 @@
 </div>
 <br>
 <div class ="cards index">
-  <%@cocktails.each do |drink|%>
+  <%@cocktails.each do |cocktail|%>
     <div class ="card-category">
-      <h4><i><%=link_to drink.name, cocktail_path(drink.id)%></i></h4>
-      <!-- <%= image_tag "logo.png", alt: "Le Wagon", width: 200 %> -->
+      <div class = "card-category-image"><%= cl_image_tag cocktail.photo.key , height: 50, width: 50, crop: :fill%></div>
+      <h4><i><%=link_to cocktail.name, cocktail_path(cocktail.id)%></i></h4>
     </div>
   <% end %>
 </div>
